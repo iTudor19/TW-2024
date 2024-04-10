@@ -1,0 +1,81 @@
+/* Common styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #31363F; 
+    font-family: Arial, sans-serif;
+    color: #FFFFFF;
+}
+
+/* Header styles */
+header {
+    background-color: #222831; 
+    position: relative;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
+}
+
+header h1 {
+    margin: 0; 
+    padding-left: 5px;
+    color: #76ABAE;
+}
+
+
+/* Language button styles */
+.lang-button {
+    margin: 0;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: 1px solid #EEEEEE;
+    border-radius: 50px;
+    padding: 10px 10px;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    top: 50%; /* Adjust top position for responsiveness */
+    right: 1%; /* Adjust right position for responsiveness */
+    transform: translate(0%, -50%); /* Center vertically */
+}
+
+
+/* Background image styles */
+.signup-card {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    border-radius: 50px;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    background-image: url("../pics/signup_card2.png");
+    background-repeat: no-repeat;
+    width: 30%; 
+    height: 85%;
+    background-color: #31363F;
+}
+
+/* Responsive design - Desktop to Tablet breakpoint */
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 5px; /* Adjust header padding for smaller screens */
+    }
+
+    .lang-button {
+        padding: 6px 6px;
+    }
+
+}
+
+/* Responsive design - Tablet to Phone breakpoint */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 5px; /* Adjust header padding for smaller screens */
+    }
+
+
+    .lang-button {
+        padding: 6px 6px;
+    }
+}
