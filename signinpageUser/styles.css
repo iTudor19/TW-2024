@@ -7,6 +7,7 @@ body {
     color: #FFFFFF;
 }
 
+
 /* Header styles */
 header {
     background-color: #222831; 
@@ -55,7 +56,7 @@ header h1 {
 }
 
 /* Signup card styles */
-.signup-card {
+.signin-card {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -63,7 +64,7 @@ header h1 {
     transform: translate(-50%, -50%);
     width: 30%; 
     height: 85%;
-    background-image: url("../pics/signup_card.png");
+    background-image: url("../pics/signin_card.png");
     background-repeat: no-repeat;
     background-size: cover; /* Cover the entire container */
     background-position: center; /* Center the background image */
@@ -81,16 +82,16 @@ header h1 {
 
 .p0 {
     margin: 0;
-    color: #EEEEEE;
+    color: #222831;
     top: 17%;
-    left: 43%;
+    left: 40%;
     font-size: 2vw;
     font-weight: bold;
 }
 
 .p1 {
     margin: 0;
-    color: #EEEEEE;
+    color: #222831;
     top: 22%;
     left: 44.5%;
     font-size: 1.5vw;
@@ -98,10 +99,10 @@ header h1 {
 
 .p2 {
     margin: 0;
+    color: #EEEEEE;
     top: 22%;
-    left: 56.5%;
+    left: 56%;
     font-size: 1.5vw;
-    color: #76ABAE;
 }
 
 .input-field {
@@ -117,7 +118,7 @@ header h1 {
     transform: translate(0%, -50%);
 }
 
-.signup-button {
+.signin-button {
     margin: 0;
     background-color: #76ABAE;
     color: #EEEEEE;
