@@ -85,7 +85,7 @@ header h1 {
     margin: 0;
     color: #222831;
     top: 17%;
-    left: 40%;
+    left: 42%;
     font-size: 2vw;
     font-weight: bold;
 }
@@ -94,15 +94,15 @@ header h1 {
     margin: 0;
     color: #222831;
     top: 22%;
-    left: 44.5%;
+    left: 42%;
     font-size: 1.5vw;
 }
 
 .p2 {
     margin: 0;
-    color: #EEEEEE;
+    color: #222831;
     top: 22%;
-    left: 56%;
+    left: 53%;
     font-size: 1.5vw;
 }
 
