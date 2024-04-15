@@ -5,7 +5,7 @@ body {
     background-color: #31363F;
     font-family: Arial, sans-serif;
     color: #FFFFFF;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Stilizare antet */
@@ -54,11 +54,20 @@ header h1 {
     transform: translate(0%, -50%);
 }
 
-/* Stilizare paragrafe */
-.p0,
-.p1,
-.p2,
-.p3,
+.p0, .p1, .p2, .p3 {
+    position: absolute;
+    transform: translate(-50%);
+    margin: 0;
+    color: #EEEEEE;
+    top: 35%;
+    font-size: 1vw;
+}
+
+.p0 { left: 35%; }
+.p1 { left: 45%; }
+.p2 { left: 55%; }
+.p3 { left: 65%; }
+
 .p4,
 .p5,
 .p6,
@@ -67,7 +76,6 @@ header h1 {
 .p9,
 .p10,
 .p11 {
-    position: absolute;
     margin: 0;
     color: #EEEEEE;
     font-size: 1.3vw;
@@ -81,102 +89,21 @@ header h1 {
     white-space: break-spaces;
 }
 
-/* Ajustarea lățimii pentru paragrafele de la dreapta */
-.right-info .p9,
-.right-info .p10,
-.right-info .p11 {
-    max-width: 50%;
-    /* Limitarea lățimii la jumătate din cel al lui p5 */
-}
-
-/* Aliniere orizontală pentru paragrafele de la stânga */
-.left-info {
+.additional-info {
+    margin-top: 20px;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    /* Aliniere la dreapta pentru paragrafele de la stânga */
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-/* Aliniere orizontală pentru paragrafele de la dreapta */
+.left-info,
 .right-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    /* Aliniere la stânga pentru paragrafele de la dreapta */
+    flex: 1;
+    margin-right: 20px;
 }
-
-
-.p0 {
-    left: 35%;
-}
-
-.p1 {
-    left: 45%;
-}
-
-.p2 {
-    left: 55%;
-}
-
-.p3 {
-    left: 65%;
-}
-
-.p4 {
-    top: 25%;
-    left: 25%;
-    font-size: 2vw;
-}
-
-.p5 {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    color: #EEEEEE;
-    top: calc(25% + 100px);
-    left: 87.5%;
-    width: 125%;
-    font-size: 1.3vw;
-}
-
-.p6 {
-    top: calc(35% + 100px);
-    left: 25%;
-}
-
-.p7 {
-    top: calc(45% + 100px);
-    left: 25%;
-}
-
-.p8 {
-    top: calc(55% + 100px);
-    left: 25%;
-    width: 25%;
-}
-
-.p9 {
-    top: calc(35% + 100px);
-    left: 60%;
-}
-
-.p10 {
-    top: calc(45% + 100px);
-    left: 60%;
-    width: 25%;
-}
-.p11 {
-    top: calc(55% + 100px);
-    left: 60%;
-    width: 25%;
-}
-
 
 /* Imaginea posterului și butonul de trailer */
 .movieposter {
-    position: absolute;
-    top: 15%;
-    left: 5%;
     width: 250px;
     height: auto;
     z-index: 1;
@@ -192,31 +119,20 @@ header h1 {
     cursor: pointer;
     outline: none;
     font-size: 1.5vw;
-    position: absolute;
-    top: 18%;
-    left: 25%;
-    transform: translate(0%, -50%);
+    margin-top: 20px;
 }
 
 /* Responsive design - Desktop to Tablet breakpoint */
 @media screen and (max-width: 1024px) {
     header {
         padding: 5px;
-        /* Adjust header padding for smaller screens */
-    }
-
-    .signup-button {
-        padding: 10px 15px;
-        /* Adjust padding for smaller screens */
-        font-size: 18px;
-        /* Adjust font size for smaller screens */
     }
 
     .lang-button {
         padding: 6px 6px;
     }
 
-    .signin-button {
+    .signup-button {
         padding: 7px 12px;
     }
 }
@@ -225,22 +141,30 @@ header h1 {
 @media screen and (max-width: 768px) {
     header {
         padding: 5px;
-        /* Adjust header padding for smaller screens */
     }
 
     .signup-button {
-        padding: 10px 10px;
-        /* Adjust padding for smaller screens */
-        font-size: 16px;
-        /* Adjust font size for smaller screens */
-    }
-
-    .signin-button {
         padding: 6px 6px;
     }
 
     .lang-button {
         padding: 6px 6px;
-        right: calc(8% + 5px);
+        right: calc(8%);
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .movieposter {
+        width: 100%;
+    }
+
+    .trailer {
+        width: 100%;
+    }
+
+    .text-container {
+        text-align: center;
     }
 }

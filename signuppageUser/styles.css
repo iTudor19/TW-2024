@@ -13,8 +13,8 @@ header {
     position: relative;
     padding: 10px;
     display: flex;
-    justify-content: space-between; /* Align items horizontally */
-    align-items: center; /* Align items vertically */
+    justify-content: space-between; 
+    align-items: center;
 }
 
 header h1 {
@@ -23,7 +23,6 @@ header h1 {
     color: #76ABAE;
 }
 
-/* Language button styles */
 .lang-button {
     margin: 0;
     background-color: #222831;
@@ -34,9 +33,9 @@ header h1 {
     cursor: pointer;
     outline: none;
     position: absolute;
-    top: 50%; /* Adjust top position for responsiveness */
-    right: 1%; /* Adjust right position for responsiveness */
-    transform: translate(0%, -50%); /* Center vertically */
+    top: 50%; 
+    right: 1%; 
+    transform: translate(0%, -50%); 
 }
 
 /* Background container styles */
@@ -65,9 +64,9 @@ header h1 {
     height: 85%;
     background-image: url("../pics/signup_card.png");
     background-repeat: no-repeat;
-    background-size: cover; /* Cover the entire container */
-    background-position: center; /* Center the background image */
-    background-color: #31363F; /* Fallback color */
+    background-size: cover;
+    background-position: center; 
+    background-color: #31363F; 
     margin: auto;
     z-index: -1;
 }
@@ -127,10 +126,9 @@ header h1 {
     padding: 10px 50px;
     cursor: pointer;
     outline: none;
-    position: absolute;
-    top: 85%; /* Adjust top position for responsiveness */
-    left: 45%; /* Adjust right position for responsiveness */
-    transform: translate(0%, -50%); /* Center vertically */
+    position: relative;
+    top: 17%;
+    transform: translate(0%, -50%); 
 }
 
 

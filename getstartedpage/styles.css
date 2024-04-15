@@ -28,7 +28,7 @@ header h1 {
     color: #EEEEEE;
     border: 1px solid #EEEEEE;
     border-radius: 50px;
-    padding: 10px 20px;
+    padding: 10px 15px;
     cursor: pointer;
     outline: none;
     position: absolute;
@@ -48,7 +48,7 @@ header h1 {
     outline: none;
     position: absolute;
     top: 50%; 
-    right: calc(8% + 5px);
+    right: 8%;
     transform: translate(0%, -50%); 
 }
 
@@ -261,7 +261,7 @@ header h1 {
         padding: 6px 6px;
     }
 
-    .signin-button {
+    .signup-button {
         padding: 7px 12px;
     }
 }
@@ -269,20 +269,24 @@ header h1 {
 /* Responsive design - Tablet to Phone breakpoint */
 @media screen and (max-width: 768px) {
     header {
-        padding: 5px; /* Adjust header padding for smaller screens */
+        padding: 5px; 
     }
     
     .getstarted-button {
-        padding: 10px 10px; /* Adjust padding for smaller screens */
-        font-size: 16px; /* Adjust font size for smaller screens */
+        padding: 10px 10px; 
+        font-size: 16px; 
     }
 
-    .signin-button{
-        padding: 6px 6px;
+    .signup-button{
+        padding: 5px 5px;
     }
 
     .lang-button {
-        padding: 6px 6px;
-        right: calc(8% + 5px);
+        padding: 5px 5px;
+        right: calc(10% + 5px);
+    }
+
+    .movies-buttonT, .movies-buttonL, .tvShows-buttonL, .tvShows-buttonT {
+        margin-right: 10px; 
     }
 }

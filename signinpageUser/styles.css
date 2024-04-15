@@ -67,9 +67,9 @@ header h1 {
     height: 85%;
     background-image: url("../pics/signin_card.png");
     background-repeat: no-repeat;
-    background-size: cover; /* Cover the entire container */
-    background-position: center; /* Center the background image */
-    background-color: #31363F; /* Fallback color */
+    background-size: cover; 
+    background-position: center; 
+    background-color: #31363F;
     margin: auto;
     z-index: -1;
 }
@@ -129,17 +129,16 @@ header h1 {
     padding: 10px 50px;
     cursor: pointer;
     outline: none;
-    position: absolute;
-    top: 85%; /* Adjust top position for responsiveness */
-    left: 45%; /* Adjust right position for responsiveness */
-    transform: translate(0%, -50%); /* Center vertically */
+    position: relative;
+    top: 25%; 
+    transform: translate(0%, -50%);
 }
 
 
 /* Responsive design - Desktop to Tablet breakpoint */
 @media screen and (max-width: 1024px) {
     header {
-        padding: 5px; /* Adjust header padding for smaller screens */
+        padding: 5px; 
     }
 
     .lang-button {
@@ -151,7 +150,7 @@ header h1 {
 /* Responsive design - Tablet to Phone breakpoint */
 @media screen and (max-width: 768px) {
     header {
-        padding: 5px; /* Adjust header padding for smaller screens */
+        padding: 5px; 
     }
 
 
