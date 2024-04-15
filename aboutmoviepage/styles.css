@@ -5,7 +5,7 @@ body {
     background-color: #31363F;
     font-family: Arial, sans-serif;
     color: #FFFFFF;
-    overflow: visible;
+    overflow: hidden;
 }
 
 /* Stilizare antet */
@@ -72,9 +72,13 @@ header h1 {
     color: #EEEEEE;
     font-size: 1.3vw;
     text-align: left;
-    /* Aliniere centrală pentru toate paragrafele */
+    /* Aliniere centrală pentru toate paragrafele 
     white-space: break-spaces;
-    /* Permiterea cuvintelor să se rupă în cazul în care nu încap pe un singur rând */
+     Permiterea cuvintelor să se rupă în cazul în care nu încap pe un singur rând */
+}
+
+.p5 {
+    white-space: break-spaces;
 }
 
 /* Ajustarea lățimii pentru paragrafele de la dreapta */
