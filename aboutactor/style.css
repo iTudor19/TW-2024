@@ -161,6 +161,7 @@ header h1 {
     left: 60%;
     width: 25%;
 }
+
 .p11 {
     top: calc(55% + 100px);
     left: 60%;
@@ -169,7 +170,7 @@ header h1 {
 
 
 /* Imaginea posterului și butonul de trailer */
-.movieposter {
+.actorphoto {
     position: absolute;
     top: 15%;
     left: 5%;
