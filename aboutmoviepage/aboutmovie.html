@@ -21,7 +21,7 @@
         <p class="p2">TV SHOWS</p>
         <p class="p3">TOP TMDB</p>
         <a href="../aboutmoviepageRo/aboutMovieRo.html" style="text-decoration: none;">
-        <button class="lang-button">en</button>
+            <button class="lang-button">en</button>
         </a>
     </header>
 
@@ -29,25 +29,94 @@
         <img src="../pics/movieposter.jpg" class="movieposter" alt="MoviePoster">
         <div class="text-container">
             <button class="trailer">Trailer</button>
-            <p class="p4"><b>Movie Title</b></p>
-            <p class="p5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nisi sem, pretium a mauris eu, imperdiet placerat est. Mauris non porttitor dui. Quisque nunc nunc, porta in ligula vitae, placerat aliquet odio.</p>
+            <p class="p4"><b id="movie-title">Movie Title</b></p>
+            <p class="p5" id="movie-overview">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nisi sem,
+                pretium a mauris eu, imperdiet placerat est. Mauris non porttitor dui. Quisque nunc nunc, porta in
+                ligula vitae, placerat aliquet odio.</p>
 
             <!-- New text elements -->
             <div class="additional-info">
                 <div class="left-info">
-                    <p class="p6"><b>Released</b>: 2023-07-19</p>
-                    <p class="p7"><b>Genres</b>: <a href="aboutmovie.html" style="color: inherit; text-decoration: none;">History</a>, <a href="aboutmovie.html" style="color: inherit; text-decoration: none;">Drama</a></p>
-                    <p class="p8"><b>Cast</b>: <a href="../aboutactor/aboutactor.html" style="color: inherit; text-decoration: none;">Cillian Murphy</span></a>, <a href="../aboutactor/aboutactor.html" style="color: inherit; text-decoration: none;">Emily Blunt</span></a>, <a href="../aboutactor/aboutactor.html" style="color: inherit; text-decoration: none;">Matt Damon</span></a>, <a href="../aboutactor/aboutactor.html" style="color: inherit; text-decoration: none;">Robert Downey Jr.</a>, <a href="../aboutactor/aboutactor.html" style="color: inherit; text-decoration: none;">Florence Pugh</a></p>
+                    <p class="p6"><b>Released</b>: <span id="release-date">2023-07-19</span></p>
+                    <p class="p7"><b>Genres</b>: <span id="genres">History, Drama</span></p>
+                    <p class="p8"><b>Cast</b>: <span id="cast">Loading...</span></p>
                 </div>
                 <div class="right-info">
-                    <p class="p9"><b>Duration</b>: 181 min</p>
-                    <p class="p10"><b>Country</b>: <a href="aboutmovie.html" style="color: inherit; text-decoration: none;">United Kingdom</a>, <a href="aboutmovie.html" style="color: inherit; text-decoration: none;">United States of America</a></p>
-                    <p class="p11"><b>Language(s)</b>: <a href="aboutmovie.html" style="color: inherit; text-decoration: none;">English</a></p>
+                    <p class="p9"><b>Duration</b>: <span id="duration">Loading...</span></p>
+                    <p class="p10"><b>Country</b>: <span id="countries">Loading...</span></p>
+                    <p class="p11"><b>Language(s)</b>: <span id="languages">English</span></p>
                 </div>
             </div>
         </div>
     </div>
-</body>
 
+    <script src="script.js"></script>
+
+    <script>
+        const apiKey = '30525dbccc50717fd5dafc1219c94c9c'; // Replace with your TMDB API key
+
+        // Function to fetch movie details from TMDB API
+        async function fetchMovieDetails(movieId) {
+            const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US&append_to_response=credits`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch movie details');
+                }
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error fetching movie details:', error.message);
+            }
+        }
+
+        // Function to update HTML with fetched movie details
+        async function updateMovieDetails() {
+            // Extract movieId from query parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const movieId = urlParams.get('movieId');
+
+            if (!movieId) {
+                console.error('No movieId found in query parameter');
+                return;
+            }
+
+            const movieDetails = await fetchMovieDetails(movieId);
+            if (!movieDetails) return;
+
+            // Update HTML elements with fetched movie details
+            document.getElementById('movie-title').textContent = movieDetails.title;
+            document.querySelector('.movieposter').src = `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`;
+            document.getElementById('movie-overview').textContent = movieDetails.overview;
+            document.getElementById('release-date').textContent = movieDetails.release_date;
+            document.getElementById('genres').textContent = movieDetails.genres.map(genre => genre.name).join(', ');
+            document.getElementById('languages').textContent = movieDetails.spoken_languages.map(language => language.english_name).join(', ');
+
+            // Update cast information
+            const castList = movieDetails.credits.cast.slice(0, 5);
+            const castElement = document.getElementById('cast');
+            castElement.innerHTML = ''; // Clear previous content
+
+            castList.forEach(actor => {
+                const actorLink = document.createElement('a');
+                actorLink.href = `../aboutactor/aboutactor.html?actorId=${actor.id}`;
+                actorLink.textContent = actor.name;
+                actorLink.style.color = 'inherit';
+                actorLink.style.textDecoration = 'none';
+                actorLink.style.marginRight = '10px'; // Optional: Adjust spacing between actor names
+                castElement.appendChild(actorLink);
+            });
+
+            // Update duration (runtime) and countries
+            document.getElementById('duration').textContent = `${movieDetails.runtime} min`;
+            const countriesList = movieDetails.production_countries.map(country => country.name);
+            document.getElementById('countries').textContent = countriesList.join(', ');
+        }
+
+        // Call updateMovieDetails function when the page loads
+        window.onload = updateMovieDetails;
+    </script>
+</body>
 
 </html>
