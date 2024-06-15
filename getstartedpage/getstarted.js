@@ -2,15 +2,28 @@ const apiKey = '30525dbccc50717fd5dafc1219c94c9c'; // Replace with your TMDB API
 
 async function fetchMovies(endpoint) {
     const url = `https://api.themoviedb.org/3/${endpoint}?api_key=${apiKey}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    return data.results;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data.results;
+    } catch (error) {
+        console.error('Error fetching movies:', error);
+        return null;
+    }
 }
 
 async function displayMovies(section, endpoint) {
     const movies = await fetchMovies(endpoint);
     const container = document.querySelector(section);
     container.innerHTML = ''; // Clear previous content
+
+    if (!movies) {
+        container.innerHTML = '<p>Error loading movies.</p>';
+        return;
+    }
 
     movies.forEach(movie => {
         const movieCard = document.createElement('div');
@@ -31,4 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
     displayMovies('.movie-containerT', 'trending/movie/week');
     displayMovies('.movie-containerL', 'movie/now_playing');
     displayMovies('.movie-containerU', 'movie/upcoming');
+
+    const searchForm = document.getElementById('searchForm');
+    searchForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const searchInput = document.getElementById('searchInput');
+        const query = searchInput.value.trim();
+
+        if (query) {
+            window.location.href = `../searchresults/searchresults.html?query=${encodeURIComponent(query)}`;
+        } else {
+            window.location.href = `../searchresults/searchresults.html?query=`;
+        }
+    });
 });

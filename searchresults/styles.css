@@ -81,7 +81,6 @@ header h1 {
     position: absolute;
     text-align: center;
     transform: translate(-50%);
-    color: #222831;
     top: 20%; 
     left: 50%;
     width: 100%;
@@ -89,8 +88,6 @@ header h1 {
 
 .search-bar {
     padding: 10px;
-    color: #000000; 
-    background-color: #FFFFFF;
     border: 1px solid #EEEEEE;
     border-radius: 50px;
     width: 400px; 
@@ -105,35 +102,14 @@ header h1 {
     margin: 0;
     color: #EEEEEE;
     top: 35%;
-    left: 5%;
+    left: 8%;
     font-size: 2vw;
 }
 
-.p6 {
-    position: absolute;
-    text-align: center;
-    font-weight: lighter;
-    transform: translate(-50%);
-    margin: 0;
-    color: #EEEEEE;
-    top: 100%;
-    left: 5%;
-    font-size: 2vw;
-}
 
-.p7 {
-    position: absolute;
-    text-align: center;
-    font-weight: lighter;
-    transform: translate(-50%);
-    margin: 0;
-    color: #EEEEEE;
-    top: 160%;
-    left: 7%;
-    font-size: 2vw;
-}
 
-.movies-buttonT, .tvShows-buttonT {
+
+.movies-buttonSr, .tvShows-buttonSr {
     margin: 0;
     background-color: #76ABAE;
     color: #EEEEEE;
@@ -147,28 +123,11 @@ header h1 {
     top: 35%;
 }
 
-.movies-buttonT { left: 10%; }
-.tvShows-buttonT { left: 17%; }
+.movies-buttonSr { left: 17%; }
+.tvShows-buttonSr { left: 24%; }
 
 
-.movies-buttonL, .tvShows-buttonL {
-    margin: 0;
-    background-color: #76ABAE;
-    color: #EEEEEE;
-    border: 1px solid #EEEEEE;
-    border-radius: 50px;
-    padding: 7px 20px;
-    cursor: pointer;
-    outline: none;
-    position: absolute;
-    font-size: 1vw;
-    top: 100%;
-}
-
-.movies-buttonL { left: 10%; }
-.tvShows-buttonL { left: 17%; }
-
-.movie-containerT {
+.search-results-container {
     position: absolute;
     display: flex;
     top: 40%;
@@ -181,42 +140,7 @@ header h1 {
 }
 
 
-.movie-containerT::-webkit-scrollbar {
-    display: none;
-}
-
-.movie-containerL {
-    position: absolute;
-    display: flex;
-    top: 105%;
-    left: 0%;
-    overflow-x: auto; 
-    flex-wrap: nowrap;
-    scroll-behavior: smooth;
-    overflow-y: hidden; 
-    width: 100%; 
-}
-
-
-.movie-containerL::-webkit-scrollbar {
-    display: none;
-}
-
-
-.movie-containerU {
-    position: absolute;
-    display: flex;
-    top: 165%;
-    left: 0%;
-    overflow-x: auto; 
-    flex-wrap: nowrap;
-    scroll-behavior: smooth;
-    overflow-y: hidden; 
-    width: 100%; 
-}
-
-
-.movie-containerU::-webkit-scrollbar {
+.search-results-container::-webkit-scrollbar {
     display: none;
 }
 
@@ -289,7 +213,7 @@ header h1 {
         right: calc(10% + 5px);
     }
 
-    .movies-buttonT, .movies-buttonL, .tvShows-buttonL, .tvShows-buttonT {
+    .movies-buttonSr, .tvShows-buttonSr {
         margin-right: 10px; 
     }
 }
