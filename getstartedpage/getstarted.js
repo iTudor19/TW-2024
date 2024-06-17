@@ -77,4 +77,31 @@ document.addEventListener('DOMContentLoaded', () => {
             displayContent(`container${section}`, endpoint);
         });
     });
+
+    // Genre Dropdown Functionality
+    const genreToggle = document.querySelector('.genre-dropdown-toggle');
+    const genreDropdown = document.querySelector('.genre-dropdown');
+
+    genreToggle.addEventListener('click', function () {
+        genreDropdown.style.display = genreDropdown.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', function (event) {
+        if (!genreToggle.contains(event.target) && !genreDropdown.contains(event.target)) {
+            genreDropdown.style.display = 'none';
+        }
+    });
+
+    // Genre selection handling
+    const genreItems = genreDropdown.querySelectorAll('li');
+    genreItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const genre = item.textContent;
+            alert(`You selected genre: ${genre}`);
+            // Here you can implement the functionality to filter or fetch movies/TV shows by the selected genre
+            genreDropdown.style.display = 'none';
+        });
+    });
+
+
 });

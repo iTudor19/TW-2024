@@ -176,6 +176,90 @@ header h1 {
     display: none;
 }
 
+.genre-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 35%;
+    background-color: #222831;
+    border: 1px solid #EEEEEE;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.genre-dropdown ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.genre-dropdown ul li {
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #EEEEEE;
+}
+
+.genre-dropdown ul li:hover {
+    background-color: #76ABAE;
+}
+
+.movies-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 45%;
+    background-color: #222831;
+    border: 1px solid #EEEEEE;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.movies-dropdown ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.movies-dropdown ul li {
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #EEEEEE;
+}
+
+.movies-dropdown ul li:hover {
+    background-color: #76ABAE;
+}
+
+.tvshows-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 55%;
+    background-color: #222831;
+    border: 1px solid #EEEEEE;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.tvshows-dropdown ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tvshows-dropdown ul li {
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #EEEEEE;
+}
+
+.tvshows-dropdown ul li:hover {
+    background-color: #76ABAE;
+}
+
 .content-card {
     flex: 0 0 auto;
     width: 200px; 
