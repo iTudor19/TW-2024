@@ -1,0 +1,239 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #31363F;
+    font-family: Arial, sans-serif;
+    color: #FFFFFF;
+    overflow: visible;
+}
+
+header {
+    background-color: #222831;
+    position: relative;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    padding-left: 5px;
+    color: #76ABAE;
+}
+
+.signup-button {
+    margin: 0;
+    background-color: #76ABAE;
+    color: #EEEEEE;
+    border: 1px solid #EEEEEE;
+    border-radius: 50px;
+    padding: 10px 15px;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    transform: translate(0%, -50%);
+}
+
+.lang-button {
+    margin: 0;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: 1px solid #EEEEEE;
+    border-radius: 50px;
+    padding: 10px 10px;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translate(0%, -50%);
+}
+
+.p0, .p1, .p2, .p3 {
+    position: absolute;
+    transform: translate(-50%);
+    margin: 0;
+    color: #EEEEEE;
+    top: 35%;
+    font-size: 1vw;
+}
+
+.p0 { left: 35%; }
+.p1 { left: 45%; }
+.p2 { left: 55%; }
+.p3 { left: 65%; }
+
+.p4 {
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%);
+    margin: 0;
+    color: #EEEEEE;
+    top: 15%;
+    left: 50%;
+    font-size: 1.5vw;
+}
+
+.search-container {
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%);
+    top: 20%;
+    left: 50%;
+    width: 100%;
+}
+
+.search-bar {
+    padding: 10px;
+    border: 1px solid #EEEEEE;
+    border-radius: 50px;
+    width: 400px;
+    font-size: 1vw;
+}
+
+.p5 {
+    position: absolute;
+    text-align: center;
+    font-weight: lighter;
+    transform: translate(-50%);
+    margin: 0;
+    color: #EEEEEE;
+    top: 35%;
+    left: 8%;
+    font-size: 2vw;
+}
+
+.movies-buttonSr, .tvShows-buttonSr {
+    margin: 0;
+    background-color: #76ABAE;
+    color: #EEEEEE;
+    border: 1px solid #EEEEEE;
+    border-radius: 50px;
+    padding: 7px 20px;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    font-size: 1vw;
+    top: 35%;
+}
+
+.movies-buttonSr { left: 17%; }
+.tvShows-buttonSr { left: 24%; }
+
+.top-movies-title, .top-tvshows-title {
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%);
+    margin: 0;
+    color: #EEEEEE;
+    font-size: 2vw;
+}
+
+.top-movies-title { top: 30%; 
+                    left: 7%;}
+.top-tvshows-title { top: 100%; 
+                     left: 8%;}
+
+.top-movies-container, .top-tvshows-container {
+    position: absolute;
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    width: 100%;
+    margin-top: 20px;
+    left: 0%;
+}
+
+.top-movies-container { top: 35%; }
+.top-tvshows-container { top: 105%; }
+
+.top-movies-container::-webkit-scrollbar, .top-tvshows-container::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-card {
+    flex: 0 0 auto;
+    width: 200px;
+    margin: 15px;
+    padding: 10px;
+    background-color: #222831;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.movie-name {
+    color: #EEEEEE;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.movie-rating {
+    color: #76ABAE;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Responsive design - Desktop to Tablet breakpoint */
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 5px; /* Adjust header padding for smaller screens */
+    }
+    
+    .getstarted-button {
+        padding: 10px 15px; /* Adjust padding for smaller screens */
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+
+    .lang-button {
+        padding: 6px 6px;
+    }
+
+    .signup-button {
+        padding: 7px 12px;
+    }
+}
+
+/* Responsive design - Tablet to Phone breakpoint */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 5px;
+    }
+    
+    .getstarted-button {
+        padding: 10px 10px;
+        font-size: 16px;
+    }
+
+    .signup-button{
+        padding: 5px 5px;
+    }
+
+    .lang-button {
+        padding: 5px 5px;
+        right: calc(10% + 5px);
+    }
+
+    .movies-buttonSr, .tvShows-buttonSr {
+        margin-right: 10px;
+    }
+
+    .top-movies-title, .top-tvshows-title {
+        font-size: 4vw;
+    }
+
+    .top-movies-container, .top-tvshows-container {
+        width: 100%;
+        left: 0;
+        transform: none;
+    }
+}
