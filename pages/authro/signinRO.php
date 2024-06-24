@@ -5,7 +5,7 @@ include ("functions.php");
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     //something was posted 
     $email = $_POST['Email'];
-    $password = $_POST['Password'];
+    $password = $_POST['Parola'];
     //$confirmpassword = $_POST['Confirm Password'];
     if (!empty($email) && !empty($password)) {
         //save to database 
@@ -17,14 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $user_data = mysqli_fetch_assoc($result);
                 if ($user_data['password'] === $password) {
                     $_SESSION['user_id'] = $user_data['user_id'];
-                    header("Location: index.php");
+                    header("Location: indexRO.php");
                     die;
                 }
             }
         }
-        echo "wrong email or password!";
+        echo "parola sau mail gresit!";
     } else {
-        echo "Please enter some valid information!";
+        echo "Va rugam introduceti un mail valid!";
     }
 }
 ?>
@@ -45,21 +45,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <a href="../homepage/home.html" style="text-decoration: none;">
             <h1>MoX</h1>
         </a>
-        <a href="signin.html" style="text-decoration: none;">
+        <a href="/signinRo.php" style="text-decoration: none;">
             <button class="lang-button">en</button>
         </a>
     </header>
 
     <div class="background-container">
-        <p class="p0">Sign In</p>
-        <p class="p1">Don't have an account?</p>
-        <a href="signup.php" style="text-decoration: none;">
-            <p class="p2">Sign Up!</p>
+        <p class="p0">Conecteaza-te!</p>
+        <p class="p1">Nu ai cont?</p>
+        <a href="signupRO.php" style="text-decoration: none;">
+            <p class="p2">Inregistreaza-te!</p>
         </a>
         <form method="post">
             <input type="email" class="input-field" name="Email"><br></br>
-            <input type="password" class="input-field" name="Password"><br></br>
-            <input id="button" type="submit" value="Sign Ip"><br></br>
+            <input type="password" class="input-field" name="Parola"><br></br>
+            <input id="button" type="submit" value="Conecteaza-te"><br></br>
             <!--<button class="signin-button">Sign In</button>
             <div class="signin-card"></div>-->
         </form>

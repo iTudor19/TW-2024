@@ -4,20 +4,20 @@ include ("connection.php");
 include ("functions.php");
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     //something was posted 
-    $username = $_POST['Username'];
+    $username = $_POST['Nume'];
     $email = $_POST['Email'];
-    $password = $_POST['Password'];
-    $confirm = $_POST['Confirm'];
+    $password = $_POST['Parola'];
+    $confirm = $_POST['Confirma'];
     //$confirmpassword = $_POST['Confirm Password'];
     if (!empty($username) && !empty($email) && !empty($password) && !empty($confirm) && $password == $confirm) {
         //save to database 
         $user_id = random_num(20);
         $query = "insert into users (user_id,username,email,password) values ('$user_id','$username','$email','$password')";
         mysqli_query($con, $query);
-        header("Location: signin.php");
+        header("Location: signinRO.php");
         die;
     } else {
-        echo "Please enter some valid information!";
+        echo "Va rugam introduceti date valide!";
     }
 }
 ?>
@@ -38,25 +38,25 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <a href="../homepage/home.html" style="text-decoration: none;">
             <h1>MoX</h1>
         </a>
-        <a href="signupRo.html" style="text-decoration: none;">
-            <button class="lang-button">en</button>
+        <a href="signup.html" style="text-decoration: none;">
+            <button class="lang-button">ro</button>
         </a>
     </header>
 
     <div class="background-container">
-        <p class="p0">Create Account</p>
-        <p class="p1">Already have an account?</p>
-        <a href="signin.php" style="text-decoration: none;">
-            <p class="p2">Sign In!</p>
+        <p class="p0">Creeaza cont</p>
+        <p class="p1">Deja ai cont?</p>
+        <a href="signinRO.php" style="text-decoration: none;">
+            <p class="p2">Conecteaza-te!</p>
         </a>
 
         <form method="post">
-            <input type="text" class="input-field" name="Username"><br></br>
+            <input type="text" class="input-field" name="Nume"><br></br>
             <input type="email" class="input-field" name="Email"><br></br>
-            <input type="password" class="input-field" name="Password"><br></br>
-            <input type="password" class="input-field" name="Confirm"><br></br>
+            <input type="password" class="input-field" name="Parola"><br></br>
+            <input type="password" class="input-field" name="Confirma"><br></br>
             <!--<input type="password" class="input-field" name="Confirm"><br></br>-->
-            <input id="button" type="submit" value="Sign Up"><br></br>
+            <input id="button" type="submit" value="Inregistreaza-te"><br></br>
             <!--<div class="signup-card"></div>-->
         </form>
 
