@@ -96,12 +96,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const genreItems = genreDropdown.querySelectorAll('li');
     genreItems.forEach(item => {
         item.addEventListener('click', () => {
-            const genre = item.textContent;
-            alert(`You selected genre: ${genre}`);
-            // Here you can implement the functionality to filter or fetch movies/TV shows by the selected genre
-            genreDropdown.style.display = 'none';
+            const genre = item.getAttribute('data-genre');
+            window.location.href = `../moviebygenre/moviebygenre.php?genre=${genre}`;
         });
     });
 
 
 });
+

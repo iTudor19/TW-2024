@@ -19,26 +19,25 @@
     </a>
     <p class="p0 genre-dropdown-toggle">GENRE</p>
     <div class="genre-dropdown">
-        <ul>
-        <li>Action</li>
-            <li>Adventure</li>
-            <li>Animation</li>
-            <li>Comedy</li>
-            <li>Crime</li>
-            <li>Documentary</li>
-            <li>Drama</li>
-            <li>Family</li>
-            <li>Fantasy</li>
-            <li>History</li>
-            <li>Horror</li>
-            <li>Music</li>
-            <li>Mystery</li>
-            <li>Romance</li>
-            <li>Science Fiction</li>
-            <li>Thriller</li>
-            <li>War</li>
-            <li>Western</li>
-        </ul>
+    <ul>
+    <li data-genre="Action">Action</li>
+    <li data-genre="Adventure">Adventure</li>
+    <li data-genre="Animation">Animation</li>
+    <li data-genre="Comedy">Comedy</li>
+    <li data-genre="Crime">Crime</li>
+    <li data-genre="Documentar">Documentary</li>
+    <li data-genre="Drama">Drama</li>
+    <li data-genre="Family">Family</li>
+    <li data-genre="Fantasy">Fantasy</li>
+    <li data-genre="Horror">Horror</li>
+    <li data-genre="Music">Music</li>
+    <li data-genre="Mystery">Mystery</li>
+    <li data-genre="Romance">Romance</li>
+    <li data-genre="Science Fiction">Science Fiction</li>
+    <li data-genre="Thriller">Thriller</li>
+    <li data-genre="War">War</li>
+</ul>
+
     </div>
 
     <a href="../movies/movies.php" style="text-decoration: none; color: inherit;">
