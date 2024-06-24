@@ -125,7 +125,7 @@ header h1 {
 }
 
 .genre-buttons input[type="checkbox"]:checked + label {
-    background-color: #EEEEEE;
+    background-color: #222831;
 }
 
 .movie-card {

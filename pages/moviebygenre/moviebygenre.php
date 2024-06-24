@@ -32,19 +32,23 @@
 <div class="genre-buttons">
     <form action="moviebygenre.php" method="get">
         <?php
+        // Define genres array
         $genres = [
-            "Action", "Adventure", "Animation", "Comed", "Crime", 
-            "Documentar", "Drama", "Family", "Fantasy", "History", 
-            "Horror", "Music", "Mystery", "Romance", "Science Fiction", 
-            "Thriller", "War"
+            "Action", "Adventure", "Animation", "Comedy", "Crime",
+            "Documentary", "Drama", "Family", "Fantasy", "Horror",
+            "Music", "Mystery", "Romance", "Science Fiction", "Thriller",
+            "War"
         ];
 
-        // Add hidden input to preserve the selected service
+        // Retrieve selected service from query parameter
         $selectedService = isset($_GET['service']) ? $_GET['service'] : '';
+
+        // Display hidden input for selected service
         if ($selectedService) {
             echo '<input type="hidden" name="service" value="' . htmlspecialchars($selectedService) . '">';
         }
 
+        // Display genre checkboxes dynamically
         foreach ($genres as $genre) {
             echo '<input type="checkbox" id="' . $genre . '" name="genres[]" value="' . $genre . '"';
             if (isset($_GET['genres']) && in_array($genre, $_GET['genres'])) {
@@ -67,39 +71,34 @@
         // Default table to fetch movies from
         $table = 'media_d'; // Default to Disney+ table
 
-        // Check if Netflix button is pressed
+        // Change table based on selected service
         if ($selectedService === 'netflix') {
-            $table = 'media_n'; // Set table to media_n for Netflix
+            $table = 'media_n'; // Netflix table
         }
 
-        // Get the selected genres from the query string
+        // Retrieve selected genres from query parameter
         $selectedGenres = isset($_GET['genres']) ? $_GET['genres'] : [];
 
-        // Fetch movies matching all selected genres from the specified table
+        // Build WHERE condition for selected genres
         if (!empty($selectedGenres)) {
-            // Build the WHERE clause for all selected genres
             $genreConditions = [];
             foreach ($selectedGenres as $genre) {
-                $genreConditions[] = "listed_in LIKE '%{$genre}%'";
+                $genreConditions[] = "listed_in LIKE '%$genre%'";
             }
             $genreCondition = implode(' AND ', $genreConditions);
             $query = "SELECT title FROM $table WHERE $genreCondition LIMIT 30";
         } else {
-            // Default query if no genres are selected
-            $query = "SELECT title FROM $table LIMIT 30";
+            $query = "SELECT title FROM $table LIMIT 30"; // Default query
         }
 
-
+        // Prepare and execute SQL query
         $stmt = $db->prepare($query);
-
         if (!$stmt) {
             throw new Exception($db->lastErrorMsg());
         }
-
-        // Execute the query
         $result = $stmt->execute();
 
-        // Display movies
+        // Loop through results and display movie cards
         while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
             $title = $row['title'];
 
@@ -136,7 +135,7 @@
             }
         }
 
-        // Close the database connection
+        // Close database connection
         $db->close();
     } catch (Exception $e) {
         echo '<p>Exception caught: ' . htmlspecialchars($e->getMessage()) . '</p>';

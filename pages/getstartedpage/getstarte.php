@@ -17,28 +17,10 @@
     <a href="../signuppageUser/signup.php">
         <button class="signup-button">Sign Up</button>
     </a>
-    <p class="p0 genre-dropdown-toggle">GENRE</p>
-    <div class="genre-dropdown">
-    <ul>
-    <li data-genre="Action">Action</li>
-    <li data-genre="Adventure">Adventure</li>
-    <li data-genre="Animation">Animation</li>
-    <li data-genre="Comedy">Comedy</li>
-    <li data-genre="Crime">Crime</li>
-    <li data-genre="Documentar">Documentary</li>
-    <li data-genre="Drama">Drama</li>
-    <li data-genre="Family">Family</li>
-    <li data-genre="Fantasy">Fantasy</li>
-    <li data-genre="Horror">Horror</li>
-    <li data-genre="Music">Music</li>
-    <li data-genre="Mystery">Mystery</li>
-    <li data-genre="Romance">Romance</li>
-    <li data-genre="Science Fiction">Science Fiction</li>
-    <li data-genre="Thriller">Thriller</li>
-    <li data-genre="War">War</li>
-</ul>
 
-    </div>
+    <a href="../moviebygenre/moviebygenre.php" style="text-decoration: none; color: inherit;">
+       <p class="p0">GENRE</p>
+    </a>
 
     <a href="../movies/movies.php" style="text-decoration: none; color: inherit;">
         <p class="p1">MOVIES</p>
