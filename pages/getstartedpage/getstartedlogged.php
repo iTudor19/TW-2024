@@ -1,3 +1,12 @@
+<?php
+session_start();
+include("../auth/connection.php");
+include("../auth/functions.php");
+
+$user_data = isset($_SESSION['user_data']) ? $_SESSION['user_data'] : null;
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,19 +23,19 @@
     <a href="../homepage/home.php" style="text-decoration: none;">
         <h1>MoX</h1>
     </a>
-    <a href="../auth/signup.php">
-        <button class="signup-button">Sign Up</button>
+    <a href="../auth/logout.php">
+        <button class="signup-button">Log Out</button>
     </a>
 
-    <a href="../moviebygenre/moviebygenre.php" style="text-decoration: none; color: inherit;">
+    <a href="../moviebygenrelogged/moviebygenrelogged.php" style="text-decoration: none; color: inherit;">
        <p class="p0">GENRE</p>
     </a>
 
-    <a href="../movies/movies.php" style="text-decoration: none; color: inherit;">
+    <a href="../movieslogged/movieslogged.php" style="text-decoration: none; color: inherit;">
         <p class="p1">MOVIES</p>
     </a>
 
-    <a href="../tvshows/tvshows.php" style="text-decoration: none; color: inherit;">
+    <a href="../tvshowslogged/tvshowslogged.php" style="text-decoration: none; color: inherit;">
         <p class="p2">TV SHOWS</p>
     </a>
 

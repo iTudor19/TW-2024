@@ -10,13 +10,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     //$confirmpassword = $_POST['Confirm Password'];
     if (!empty($username) && !empty($email) && !empty($password)) {
         //save to database 
-        $user_id = random_num(20);
-        $query = "insert into users (user_id,username,email,password) values ('$user_id','$username','$email','$password')";
+        $id = random_num(20);
+        $query = "insert into users (id,username,email,password) values ('$id','$username','$email','$password')";
         mysqli_query($con, $query);
-        header("Location: ../parte_TW/index.php");
+        header("Location: ../auth/index.php");
         die;
     } else {
-        echo "Please enter some valid information!";
+        $message = "Please enter some valid information!";
     }
 }
 ?>
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <a href="../homepage/home.html" style="text-decoration: none;">
             <h1>MoX</h1>
         </a>
-        <a href="../signuppageUserRo/signupRo.html" style="text-decoration: none;">
+        <a href="../signuppageUserRo/signupRo.php" style="text-decoration: none;">
             <button class="lang-button">en</button>
         </a>
     </header>
@@ -45,17 +45,16 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div class="background-container">
         <p class="p0">Create Account</p>
         <p class="p1">Already have an account?</p>
-        <a href="../parte_TW/signin.php" style="text-decoration: none;">
+        <a href="../auth/signin.php" style="text-decoration: none;">
             <p class="p2">Sign In!</p>
         </a>
 
         <form method="post">
-            <input type="text" class="input-field" name="Username"><br></br>
-            <input type="email" class="input-field" name="Email"><br></br>
-            <input type="password" class="input-field" name="Password"><br></br>
-            <!--<input type="password" class="input-field" name="Confirm"><br></br>-->
-            <input id="button" type="submit" value="Sign Up"><br></br>
-            <!--<div class="signup-card"></div>-->
+            <input type="text" class="input-field" name="Username" placeholder="Username"><br>
+            <input type="email" class="input-field" name="Email" placeholder="Email"><br>
+            <input type="password" class="input-field" name="Password" placeholder="Password">
+            <input id="button" type="submit" class="signup-button" value="Sign Up"><br>
+            <div class="signup-card"></div>
         </form>
 
     </div>

@@ -1,6 +1,4 @@
-const apiKey = '30525dbccc50717fd5dafc1219c94c9c'; // Replace with your TMDB API key
-
-        // Function to fetch movie details from TMDB API
+const apiKey = '30525dbccc50717fd5dafc1219c94c9c'; 
         async function fetchMovieDetails(movieId) {
             const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US&append_to_response=credits`;
 
@@ -16,9 +14,7 @@ const apiKey = '30525dbccc50717fd5dafc1219c94c9c'; // Replace with your TMDB API
             }
         }
 
-        // Function to update HTML with fetched movie details
         async function updateMovieDetails() {
-            // Extract movieId from query parameter
             const urlParams = new URLSearchParams(window.location.search);
             const movieId = urlParams.get('movieId');
 
@@ -30,7 +26,6 @@ const apiKey = '30525dbccc50717fd5dafc1219c94c9c'; // Replace with your TMDB API
             const movieDetails = await fetchMovieDetails(movieId);
             if (!movieDetails) return;
 
-            // Update HTML elements with fetched movie details
             document.getElementById('movie-title').textContent = movieDetails.title;
             document.querySelector('.movieposter').src = `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`;
             document.getElementById('movie-overview').textContent = movieDetails.overview;
@@ -38,26 +33,23 @@ const apiKey = '30525dbccc50717fd5dafc1219c94c9c'; // Replace with your TMDB API
             document.getElementById('genres').textContent = movieDetails.genres.map(genre => genre.name).join(', ');
             document.getElementById('languages').textContent = movieDetails.spoken_languages.map(language => language.english_name).join(', ');
 
-            // Update cast information
             const castList = movieDetails.credits.cast.slice(0, 5);
             const castElement = document.getElementById('cast');
             castElement.innerHTML = ''; // Clear previous content
 
             castList.forEach(actor => {
                 const actorLink = document.createElement('a');
-                actorLink.href = `../aboutactor/aboutactor.html?actorId=${actor.id}`;
+                actorLink.href = `../aboutactor/aboutactor.php?actorId=${actor.id}`;
                 actorLink.textContent = actor.name;
                 actorLink.style.color = 'inherit';
                 actorLink.style.textDecoration = 'none';
-                actorLink.style.marginRight = '10px'; // Optional: Adjust spacing between actor names
+                actorLink.style.marginRight = '10px'; 
                 castElement.appendChild(actorLink);
             });
 
-            // Update duration (runtime) and countries
             document.getElementById('duration').textContent = `${movieDetails.runtime} min`;
             const countriesList = movieDetails.production_countries.map(country => country.name);
             document.getElementById('countries').textContent = countriesList.join(', ');
         }
 
-        // Call updateMovieDetails function when the page loads
         window.onload = updateMovieDetails;

@@ -13,7 +13,7 @@ function check_login($con)
         }
     }
 
-    header("Location: ../parte_TW/signin.php");
+    header("Location: ../auth/signin.php");
     die;
 }
 

@@ -11,13 +11,24 @@
         <a href="../homepage/home.php" style="text-decoration: none;">
             <h1>MoX</h1>
         </a>
-        <a href="../signuppageUser/signup.php">
+        <a href="../auth/signup.php">
             <button class="signup-button">Sign Up</button>
         </a>
-        <p class="p0">GENRE</p>
+        <a href="../moviebygenre/moviebygenre.php" style="text-decoration: none; color: inherit;">
+       <p class="p0">GENRE</p>
+    </a>
+
+    <a href="../movies/movies.php" style="text-decoration: none; color: inherit;">
         <p class="p1">MOVIES</p>
+    </a>
+
+    <a href="../tvshows/tvshows.php" style="text-decoration: none; color: inherit;">
         <p class="p2">TV SHOWS</p>
+    </a>
+
+    <a href="../toptmdb/toptmdb.php" style="text-decoration: none; color: inherit;">
         <p class="p3">TOP TMDB</p>
+    </a>
         <a href="../aboutmoviepageRo/aboutMovieRo.php" style="text-decoration: none;">
             <button class="lang-button">en</button>
         </a>

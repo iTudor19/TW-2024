@@ -1,5 +1,4 @@
-const apiKey = '30525dbccc50717fd5dafc1219c94c9c'; // Replace with your TMDB API key
-
+const apiKey = '30525dbccc50717fd5dafc1219c94c9c'; 
 async function fetchContent(endpoint) {
     const url = `https://api.themoviedb.org/3/${endpoint}?api_key=${apiKey}`;
     try {
@@ -39,7 +38,6 @@ async function displayContent(sectionId, endpoint) {
     });
 }
 
-// Fetch and display data when the page loads
 document.addEventListener('DOMContentLoaded', () => {
     displayContent('containerT', 'trending/movie/week');
     displayContent('containerL', 'movie/now_playing');
@@ -47,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const searchForm = document.getElementById('searchForm');
     searchForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
+        event.preventDefault(); 
 
         const searchInput = document.getElementById('searchInput');
         const query = searchInput.value.trim();
@@ -78,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Genre Dropdown Functionality
     const genreToggle = document.querySelector('.genre-dropdown-toggle');
     const genreDropdown = document.querySelector('.genre-dropdown');
 
@@ -92,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Genre selection handling
     const genreItems = genreDropdown.querySelectorAll('li');
     genreItems.forEach(item => {
         item.addEventListener('click', () => {

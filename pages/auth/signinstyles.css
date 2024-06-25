@@ -100,7 +100,7 @@ header h1 {
 
 .p2 {
     margin: 0;
-    color: #EEEEEE;
+    color: #222831;
     top: 22%;
     left: 56%;
     font-size: 1.5vw;
@@ -113,10 +113,9 @@ header h1 {
     border: 1px solid #EEEEEE;
     background-color: #31363F;
     color: #EEEEEE;
-    width: 25%;
+    width: 95%;
     position: relative;
-    top: 10%;
-    transform: translate(0%, -50%);
+    top: 35%;
 }
 
 .signin-button {
@@ -130,7 +129,8 @@ header h1 {
     cursor: pointer;
     outline: none;
     position: relative;
-    top: 25%; 
+    top: 95%; 
+    left: 25%;
     transform: translate(0%, -50%);
 }
 

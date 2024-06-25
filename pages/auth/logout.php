@@ -2,8 +2,8 @@
 
 session_start();
 
-if (isset($_SESSION['user_id'])) {
-    unset($_SESSION['user_id']);
+if (isset($_SESSION['id'])) {
+    unset($_SESSION['id']);
 }
 
-header('location: ../parte_TW/signin.php');
+header('location: ../auth/signin.php');

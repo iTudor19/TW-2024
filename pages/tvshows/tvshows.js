@@ -18,11 +18,11 @@ function fetchTVShows(service, letter) {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      return response.text(); // assuming response is text/html
+      return response.text(); 
     })
     .then(html => {
       const container = document.querySelector('.movie-containerL');
-      container.innerHTML = html; // Update container with fetched HTML
+      container.innerHTML = html; 
     })
     .catch(error => {
       console.error('Error fetching TV shows:', error);

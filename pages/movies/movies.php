@@ -15,10 +15,17 @@
     <a href="../signuppageUser/signup.html">
         <button class="signup-button">Sign Up</button>
     </a>
-    <p class="p0">GENRE</p>
+    <a href="../moviebygenre/moviebygenre.php" style="text-decoration: none; color: inherit;">
+       <p class="p0">GENRE</p>
+    </a>
     <p class="p1">MOVIES</p>
-    <p class="p2">TV SHOWS</p>
-    <p class="p3">TOP TMDB</p>
+    <a href="../tvshows/tvshows.php" style="text-decoration: none; color: inherit;">
+        <p class="p2">TV SHOWS</p>
+    </a>
+
+    <a href="../toptmdb/toptmdb.php" style="text-decoration: none; color: inherit;">
+        <p class="p3">TOP TMDB</p>
+    </a>
     <a href="../getstartedpageRO/getstartedRo.html" style="text-decoration: none;">
         <button class="lang-button">en</button>
     </a>
@@ -32,7 +39,6 @@
 <div class="alphabet-selector">
     <ul>
         <?php
-        // Generate alphabet links dynamically
         $letters = range('A', 'Z');
         foreach ($letters as $letter) {
             echo '<li><a href="#" class="letter-link" data-letter="' . $letter . '">' . $letter . '</a></li>';
@@ -42,50 +48,39 @@
 </div>
 
 <div class="movie-containerL">
-    <!-- Movies will be dynamically loaded here -->
     <?php
     try {
-        // Connect to SQLite database
         $db = new SQLite3('../../db/BD_final.db');
 
-        // Default table and letter to fetch movies from
-        $table = 'media_n'; // Default table to fetch movies from
-        $letter = isset($_GET['letter']) ? $_GET['letter'] : 'A'; // Default to 'A' if letter is not specified
+        $table = 'media_n'; 
+        $letter = isset($_GET['letter']) ? $_GET['letter'] : 'A'; 
 
-        // Check if Netflix button is pressed
         if (isset($_GET['service']) && $_GET['service'] === 'netflix') {
-            $table = 'media_n'; // Set table to media_n for Netflix
+            $table = 'media_n'; 
         }
 
-        // Check if Disney+ button is pressed
         if (isset($_GET['service']) && $_GET['service'] === 'disney') {
-            $table = 'media_d'; // Set table to media_d for Disney+
+            $table = 'media_d'; 
         }
 
-        // Fetch up to 30 movies from selected table starting with selected letter
         $query = "SELECT title FROM $table WHERE type = 'Movie' AND title LIKE '$letter%' LIMIT 30";
         $result = $db->query($query);
 
-        // Display movies
         while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
             $title = $row['title'];
 
-            // Fetch movie details from TMDB API
-            $apiKey = '30525dbccc50717fd5dafc1219c94c9c'; // Replace with your TMDB API key
+            $apiKey = '30525dbccc50717fd5dafc1219c94c9c'; 
             $tmdbUrl = "https://api.themoviedb.org/3/search/movie?api_key={$apiKey}&query=" . urlencode($title);
 
-            // Perform API request
             $response = file_get_contents($tmdbUrl);
             $tmdbData = json_decode($response, true);
 
-            // Check if results are found and fetch details
             if (isset($tmdbData['results'][0])) {
                 $tmdbMovie = $tmdbData['results'][0];
                 $posterPath = isset($tmdbMovie['poster_path']) ? $tmdbMovie['poster_path'] : null;
-                $rating = isset($tmdbMovie['vote_average']) ? $tmdbMovie['vote_average'] : 'N/A'; // Fetch rating, default to 'N/A' if not available
-                $posterUrl = $posterPath ? "https://image.tmdb.org/t/p/w500{$posterPath}" : "../pics/movieposter.jpg"; // Poster URL or default poster
+                $rating = isset($tmdbMovie['vote_average']) ? $tmdbMovie['vote_average'] : 'N/A'; 
+                $posterUrl = $posterPath ? "https://image.tmdb.org/t/p/w500{$posterPath}" : "../pics/movieposter.jpg"; 
 
-                // Display movie card
                 echo '<div class="movie-card">';
                 echo '<a href="../aboutmoviepage/aboutmovie.php?movieId=' . $tmdbMovie['id'] . '" style="text-decoration: none;">';
                 echo '<img src="' . htmlspecialchars($posterUrl) . '" alt="' . htmlspecialchars($title) . '">';
@@ -94,16 +89,14 @@
                 echo '</a>';
                 echo '</div>';
             } else {
-                // Handle case where no movie details are found
                 echo '<div class="movie-card">';
                 echo '<img src="../pics/movieposter.jpg" alt="' . htmlspecialchars($title) . '">';
                 echo '<p class="movie-name">' . htmlspecialchars($title) . '</p>';
-                echo '<p class="movie-rating">Rating: N/A</p>'; // Default rating if not found
+                echo '<p class="movie-rating">Rating: N/A</p>'; 
                 echo '</div>';
             }
         }
 
-        // Close the database connection
         $db->close();
     } catch (Exception $e) {
         echo '<p>Exception caught: ' . $e->getMessage() . '</p>';

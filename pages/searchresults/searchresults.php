@@ -12,13 +12,23 @@
     <a href="../homepage/home.php" style="text-decoration: none;">
         <h1>MoX</h1>
     </a>
-    <a href="../signuppageUser/signup.php">
+    <a href="../auth/signup.php">
         <button class="signup-button">Sign Up</button>
     </a>
-    <p class="p0">GENRE</p>
-    <p class="p1">MOVIES</p>
-    <p class="p2">TV SHOWS</p>
-    <p class="p3">TOP TMDB</p>
+    <a href="../moviebygenre/moviebygenre.php" style="text-decoration: none; color: inherit;">
+       <p class="p0">GENRE</p>
+    </a>
+    <a href="../movies/movies.php" style="text-decoration: none; color: inherit;">
+        <p class="p1">MOVIES</p>
+    </a>
+
+    <a href="../tvshows/tvshows.php" style="text-decoration: none; color: inherit;">
+        <p class="p2">TV SHOWS</p>
+    </a>
+
+    <a href="../toptmdb/toptmdb.php" style="text-decoration: none; color: inherit;">
+        <p class="p3">TOP TMDB</p>
+    </a>
     <a href="../getstartedpageRO/getstartedRo.php" style="text-decoration: none;">
         <button class="lang-button">en</button>
     </a>
@@ -26,25 +36,17 @@
 
 <p class="p4">Search Results</p>
 <div class="search-results-container">
-    <!-- Search results will be loaded here -->
     <?php
-    // Check if query parameter 'query' is set
     if (isset($_GET['query'])) {
         $searchQuery = $_GET['query'];
 
-        // Perform server-side operations, e.g., fetch data from database or API
-        // For demonstration, we'll simulate search results
         $searchResults = fetchSearchResults($searchQuery);
-
-        // Display search results
         displaySearchResults($searchResults);
     } else {
         echo '<p>No search results found.</p>';
     }
 
     function fetchSearchResults($query) {
-        // Here you can implement fetching search results from database or API
-        // This is a mock function returning dummy data for demonstration
         $dummyResults = array(
             array('title' => 'Movie 1', 'overview' => 'Overview of Movie 1'),
             array('title' => 'Movie 2', 'overview' => 'Overview of Movie 2'),

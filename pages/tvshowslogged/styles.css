@@ -1,0 +1,280 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #31363F; 
+    font-family: Arial, sans-serif;
+    color: #FFFFFF;
+    overflow: visible;
+}
+
+header {
+    background-color: #222831; 
+    position: relative;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+header h1 {
+    margin: 0; 
+    padding-left: 5px;
+    color: #76ABAE;
+}
+
+.signup-button {
+    margin: 0;
+    background-color: #76ABAE;
+    color: #EEEEEE;
+    border: 1px solid #EEEEEE;
+    border-radius: 50px;
+    padding: 10px 15px;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    top: 50%; 
+    right: 1%;
+    transform: translate(0%, -50%); 
+}
+
+.lang-button {
+    margin: 0;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: 1px solid #EEEEEE;
+    border-radius: 50px;
+    padding: 10px 10px;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    top: 50%; 
+    right: 8%;
+    transform: translate(0%, -50%); 
+}
+
+.p0, .p1, .p2, .p3 {
+    position: absolute;
+    transform: translate(-50%);
+    margin: 0;
+    color: #EEEEEE;
+    top: 35%;
+    font-size: 1vw;
+}
+
+.p0 { left: 35%; }
+.p1 { left: 45%; }
+.p2 { left: 55%; }
+.p3 { left: 65%; }
+
+.alphabet-selector {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.alphabet-selector ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.alphabet-selector ul li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.alphabet-selector ul li a {
+    color: #76ABAE;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.alphabet-selector ul li a:hover {
+    background-color: #76ABAE;
+    color: #FFFFFF;
+}
+
+.service-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.service-button {
+    background-color: #76ABAE;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.service-button:hover {
+    background-color: #5c8c8e;
+}
+
+
+.movie-card {
+    flex: 0 0 auto;
+    width: 200px; 
+    margin: 15px; 
+    padding: 10px;
+    background-color: #222831;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.movie-name {
+    color: #EEEEEE;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.movie-rating {
+    color: #76ABAE;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.movie-containerL {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    top: 25%;
+    gap: 1%;
+    left: 0%;
+    overflow-x: auto; 
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+    overflow-y: hidden; 
+    width: 100%; 
+
+}
+
+
+.movie-containerL::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Export button styles */
+.dropbtn {
+    background-color: #76ABAE;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropbtn:hover {
+    background-color: #5c8c8e;
+}
+
+/* Dropdown content styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #222831;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #76ABAE;
+}
+
+.dropdown-content a:hover {
+    background-color: #76ABAE;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #5c8c8e;
+}
+
+/* Add positioning for the dropdown menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 20px; /* Adjust as needed for your layout */
+}
+
+
+
+/* Responsive design - Desktop to Tablet breakpoint */
+@media screen and (max-width: 1024px) {
+    header {
+        padding: 5px; /* Adjust header padding for smaller screens */
+    }
+    
+    .signup-button {
+        padding: 10px 15px; /* Adjust padding for smaller screens */
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+
+    .lang-button {
+        padding: 6px 6px;
+    }
+
+    .p0, .p1, .p2, .p3 {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .movie-containerL {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Responsive design - Tablet to Phone breakpoint */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 5px; 
+    }
+    
+    .signup-button {
+        padding: 7px 12px;
+    }
+
+    .lang-button {
+        padding: 5px 5px;
+        right: calc(10% + 5px);
+    }
+
+    .p0, .p1, .p2, .p3 {
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+
+    .alphabet-selector {
+        margin-top: 10px;
+    }
+
+    .service-buttons {
+        margin-top: 10px;
+    }
+
+    .movie-containerL {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -10,11 +10,11 @@
 
 <header>
     <h1>MoX</h1>
-     <a href="../signuppageUserRo/signupRo.html">
-    <button class="signup-button">Conectare</button>
+    <a href="../signuppageUserRo/signupRo.php">
+        <button class="signup-button">Conectare</button>
     </a>
-    <a href="../homepage/home.html" style="text-decoration: none;">
-    <button class="lang-button">ro</button>
+    <a href="../homepage/home.php" style="text-decoration: none;">
+        <button class="lang-button">ro</button>
     </a>
 </header>
 
@@ -23,8 +23,8 @@
     <a>Urmărește oriunde. Anulează oricând.</a>
 </div>
 
-<a href="../getstartedpageRO/getstartedRo.html" style="text-decoration: none;">
-<button class="getstarted-button">Incepe</button>
+<a href="../getstartedpageRO/getstartedRo.php" style="text-decoration: none;">
+    <button class="getstarted-button">Incepe</button>
 </a>
 
 <div class="centered-img"></div>
