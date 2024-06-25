@@ -1,4 +1,5 @@
-const apiKey = '30525dbccc50717fd5dafc1219c94c9c'; 
+const apiKey = '30525dbccc50717fd5dafc1219c94c9c';
+
 async function fetchContent(endpoint) {
     const url = `https://api.themoviedb.org/3/${endpoint}?api_key=${apiKey}`;
     try {
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const searchForm = document.getElementById('searchForm');
     searchForm.addEventListener('submit', function(event) {
-        event.preventDefault(); 
+        event.preventDefault();
 
         const searchInput = document.getElementById('searchInput');
         const query = searchInput.value.trim();

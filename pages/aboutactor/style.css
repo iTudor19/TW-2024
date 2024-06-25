@@ -52,7 +52,6 @@ header h1 {
     transform: translate(0%, -50%);
 }
 
-/* Stilizare paragrafe */
 .p0, .p1, .p2, .p3 {
     position: absolute;
     transform: translate(-50%);

@@ -3,15 +3,13 @@ session_start();
 include ("connection.php");
 include ("functions.php");
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    //something was posted 
     $username = $_POST['Username'];
     $email = $_POST['Email'];
     $password = $_POST['Password'];
-    //$confirmpassword = $_POST['Confirm Password'];
-    if (!empty($username) && !empty($email) && !empty($password)) {
-        //save to database 
-        $id = random_num(20);
-        $query = "insert into users (id,username,email,password) values ('$id','$username','$email','$password')";
+    $confirm = $_POST['Confirm'];
+    if (!empty($username) && !empty($email) && !empty($password) && !empty($confirm) && $password == $confirm) {
+        $user_id = random_num(20);
+        $query = "insert into users (user_id,username,email,password) values ('$user_id','$username','$email','$password')";
         mysqli_query($con, $query);
         header("Location: ../auth/index.php");
         die;
@@ -50,11 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </a>
 
         <form method="post">
-            <input type="text" class="input-field" name="Username" placeholder="Username"><br>
-            <input type="email" class="input-field" name="Email" placeholder="Email"><br>
-            <input type="password" class="input-field" name="Password" placeholder="Password">
-            <input id="button" type="submit" class="signup-button" value="Sign Up"><br>
-            <div class="signup-card"></div>
+            <input type="text" class="input-field" name="Username"><br></br>
+            <input type="email" class="input-field" name="Email"><br></br>
+            <input type="password" class="input-field" name="Password"><br></br>
+            <input type="password" class="input-field" name="Confirm"><br></br>
+            <input id="button" type="submit" value="Sign Up"><br></br>
         </form>
 
     </div>

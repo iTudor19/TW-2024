@@ -9,7 +9,7 @@
 <body>
 
 <header>
-    <a href="../homepage/home.html" style="text-decoration: none;">
+    <a href="../homepage/home.php" style="text-decoration: none;">
         <h1>MoX</h1>
     </a>
     <a href="../auth/signup.html">

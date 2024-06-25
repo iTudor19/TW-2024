@@ -13,6 +13,7 @@
         <h1>MoX</h1>
     </a>
     <a href="../auth/signup.php">
+    <a href="../auth/signup.php">
         <button class="signup-button">Sign Up</button>
     </a>
     <a href="../moviebygenre/moviebygenre.php" style="text-decoration: none; color: inherit;">

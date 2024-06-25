@@ -50,7 +50,6 @@
 <button class="toggle-button" data-section="T" data-type="tv">TV Shows</button>
 
 <div class="container" id="containerT">
-    <!-- Trending content will be loaded here -->
     <?php include 'getstarted.php'; ?>
 </div>
 
@@ -59,7 +58,6 @@
 <button class="toggle-button" data-section="L" data-type="tv">TV Shows</button>
 
 <div class="container" id="containerL">
-    <!-- Latest content will be loaded here -->
     <?php include 'getstarted.php'; ?>
 </div>
 
@@ -68,7 +66,6 @@
 <button class="toggle-button" data-section="U" data-type="tv">TV Shows</button>
 
 <div class="container" id="containerU">
-    <!-- Upcoming content will be loaded here -->
     <?php include 'getstarted.php'; ?>
 </div>
 

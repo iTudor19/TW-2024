@@ -13,6 +13,7 @@
         <h1>MoX</h1>
     </a>
     <a href="../auth/signup.php">
+    <a href="../auth/signup.php">
         <button class="signup-button">Sign Up</button>
     </a>
     <p class="p0">GENRE</p>
@@ -107,8 +108,8 @@
             if (isset($tmdbData['results'][0])) {
                 $tmdbMovie = $tmdbData['results'][0];
                 $posterPath = isset($tmdbMovie['poster_path']) ? $tmdbMovie['poster_path'] : null;
-                $rating = isset($tmdbMovie['vote_average']) ? $tmdbMovie['vote_average'] : 'N/A'; // Fetch rating, default to 'N/A' if not available
-                $posterUrl = $posterPath ? "https://image.tmdb.org/t/p/w500{$posterPath}" : "../pics/movieposter.jpg"; // Poster URL or default poster
+                $rating = isset($tmdbMovie['vote_average']) ? $tmdbMovie['vote_average'] : 'N/A';
+                $posterUrl = $posterPath ? "https://image.tmdb.org/t/p/w500{$posterPath}" : "../pics/movieposter.jpg";
 
                 echo '<div class="movie-card">';
                 echo '<a href="../aboutmoviepage/aboutmovie.php?movieId=' . $tmdbMovie['id'] . '" style="text-decoration: none;">';

@@ -9,7 +9,7 @@
 <body>
 
 <header>
-    <a href="../homepage/home.html" style="text-decoration: none;">
+    <a href="../homepage/home.php" style="text-decoration: none;">
         <h1>MoX</h1>
     </a>
     <a href="../auth/signup.html">
@@ -29,7 +29,7 @@
     <a href="toptmdb.php" style="text-decoration: none; color: inherit;">
         <p class="p3">TOP TMDB</p>
     </a>
-    <a href="../getstartedpageRO/getstartedRo.html" style="text-decoration: none;">
+    <a href="../getstartedpageRO/getstartedRo.php" style="text-decoration: none;">
         <button class="lang-button">en</button>
     </a>
 </header>

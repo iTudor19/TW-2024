@@ -1,3 +1,4 @@
+/* Common styles */
 body {
     margin: 0;
     padding: 0;
@@ -6,6 +7,7 @@ body {
     color: #FFFFFF;
 }
 
+/* Header styles */
 header {
     background-color: #222831; 
     position: relative;
@@ -21,6 +23,7 @@ header h1 {
     color: #76ABAE;
 }
 
+/* Sign-in button styles */
 .signup-button {
     margin: 0;
     background-color: #76ABAE;
@@ -36,6 +39,7 @@ header h1 {
     transform: translate(0%, -50%); 
 }
 
+/* Language button styles */
 .lang-button {
     margin: 0;
     background-color: #222831;
@@ -51,12 +55,13 @@ header h1 {
     transform: translate(0%, -50%); 
 }
 
+/* Get started button styles */
 .getstarted-button {
     background-color: #76ABAE;
     color: #EEEEEE;
     border: none;
     border-radius: 50px;
-    padding: 15px 20px;
+    padding: 15px 20px; /* Adjust padding for smaller screens */
     cursor: pointer;
     outline: none;
     font-size: 20px;
@@ -66,6 +71,7 @@ header h1 {
     position: absolute;
 }
 
+/* Content styles */
 .content {
     color: #EEEEEE;
     position: absolute;
@@ -87,6 +93,7 @@ header h1 {
     font-weight: lighter;
 }
 
+/* Background image styles */
 .centered-img {
     position: absolute;
     top: 50%;
@@ -101,6 +108,7 @@ header h1 {
     background-color: #31363F;
 }
 
+/* Responsive design - Desktop to Tablet breakpoint */
 @media screen and (max-width: 1024px) {
     header {
         padding: 5px; 
@@ -120,6 +128,7 @@ header h1 {
     }
 }
 
+/* Responsive design - Tablet to Phone breakpoint */
 @media screen and (max-width: 768px) {
     header {
         padding: 5px; 

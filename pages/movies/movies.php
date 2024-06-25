@@ -9,10 +9,10 @@
 <body>
 
 <header>
-    <a href="../homepage/home.html" style="text-decoration: none;">
+    <a href="../homepage/home.php" style="text-decoration: none;">
         <h1>MoX</h1>
     </a>
-    <a href="../signuppageUser/signup.html">
+    <a href="../auth/signup.php">
         <button class="signup-button">Sign Up</button>
     </a>
     <a href="../moviebygenre/moviebygenre.php" style="text-decoration: none; color: inherit;">

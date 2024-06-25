@@ -173,7 +173,6 @@ header h1 {
     display: none;
 }
 
-/* Responsive design - Desktop to Tablet breakpoint */
 @media screen and (max-width: 1024px) {
     header {
         padding: 5px;
@@ -197,7 +196,6 @@ header h1 {
     }
 }
 
-/* Responsive design - Tablet to Phone breakpoint */
 @media screen and (max-width: 768px) {
     header {
         padding: 5px;

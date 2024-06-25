@@ -24,7 +24,7 @@ async function displayTopMovies() {
         return;
     }
 
-    container.innerHTML = ''; // Clear previous content
+    container.innerHTML = '';
 
     if (!movies || movies.length === 0) {
         container.innerHTML = '<p>No top movies found.</p>';
@@ -35,7 +35,7 @@ async function displayTopMovies() {
         const movieCard = document.createElement('div');
         movieCard.className = 'movie-card';
         movieCard.innerHTML = `
-            <a href="../aboutmoviepage/aboutmovie.html?movieId=${movie.id}" style="text-decoration: none;">
+            <a href="../aboutmoviepage/aboutmovie.php?movieId=${movie.id}" style="text-decoration: none;">
                 <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                 <p class="movie-name">${movie.title}</p>
                 <p class="movie-rating">Rating: ${movie.vote_average}</p>
@@ -54,7 +54,7 @@ async function displayTopTVShows() {
         return;
     }
 
-    container.innerHTML = ''; // Clear previous content
+    container.innerHTML = '';
 
     if (!tvShows || tvShows.length === 0) {
         container.innerHTML = '<p>No top TV shows found.</p>';
@@ -65,7 +65,7 @@ async function displayTopTVShows() {
         const tvShowCard = document.createElement('div');
         tvShowCard.className = 'movie-card';
         tvShowCard.innerHTML = `
-            <a href="../aboutmoviepage/aboutmovie.html?tvShowId=${tvShow.id}" style="text-decoration: none;">
+            <a href="../aboutmoviepage/aboutmovie.php?tvShowId=${tvShow.id}" style="text-decoration: none;">
                 <img src="https://image.tmdb.org/t/p/w500${tvShow.poster_path}" alt="${tvShow.name}">
                 <p class="movie-name">${tvShow.name}</p>
                 <p class="movie-rating">Rating: ${tvShow.vote_average}</p>

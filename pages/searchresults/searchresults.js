@@ -1,4 +1,4 @@
-const apiKey = '30525dbccc50717fd5dafc1219c94c9c'; // Ensure this is your correct and active TMDB API key
+const apiKey = '30525dbccc50717fd5dafc1219c94c9c';
 
 async function fetchMovies(endpoint) {
     const url = `https://api.themoviedb.org/3/${endpoint}&api_key=${apiKey}`;
@@ -18,8 +18,7 @@ async function fetchMovies(endpoint) {
 async function displaySearchResults(query) {
     const movies = await fetchMovies(`search/movie?query=${encodeURIComponent(query)}`);
     const container = document.querySelector('.search-results-container');
-    container.innerHTML = ''; // Clear previous content
-
+    container.innerHTML = '';
     if (!movies || movies.length === 0) {
         container.innerHTML = '<p>No results found.</p>';
         return;
