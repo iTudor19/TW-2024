@@ -14,7 +14,7 @@
     <a href="../homepage/home.php" style="text-decoration: none;">
         <h1>MoX</h1>
     </a>
-    <a href="../signuppageUser/signup.php">
+    <a href="../auth/signup.php">
         <button class="signup-button">Sign Up</button>
     </a>
 
@@ -50,7 +50,6 @@
 <button class="toggle-button" data-section="T" data-type="tv">TV Shows</button>
 
 <div class="container" id="containerT">
-    <!-- Trending content will be loaded here -->
     <?php include 'getstarted.php'; ?>
 </div>
 
@@ -59,7 +58,6 @@
 <button class="toggle-button" data-section="L" data-type="tv">TV Shows</button>
 
 <div class="container" id="containerL">
-    <!-- Latest content will be loaded here -->
     <?php include 'getstarted.php'; ?>
 </div>
 
@@ -68,7 +66,6 @@
 <button class="toggle-button" data-section="U" data-type="tv">TV Shows</button>
 
 <div class="container" id="containerU">
-    <!-- Upcoming content will be loaded here -->
     <?php include 'getstarted.php'; ?>
 </div>
 

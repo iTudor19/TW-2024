@@ -9,10 +9,10 @@
 <body>
 
 <header>
-    <a href="../homepage/home.html" style="text-decoration: none;">
+    <a href="../homepage/home.php" style="text-decoration: none;">
         <h1>MoX</h1>
     </a>
-    <a href="../signuppageUser/signup.html">
+    <a href="../auth/signup.php">
         <button class="signup-button">Sign Up</button>
     </a>
     <p class="p0">GENRE</p>
@@ -21,7 +21,7 @@
     <a href="toptmdb.php" style="text-decoration: none; color: inherit;">
         <p class="p3">TOP TMDB</p>
     </a>
-    <a href="../getstartedpageRO/getstartedRo.html" style="text-decoration: none;">
+    <a href="../getstartedpageRO/getstartedRo.php" style="text-decoration: none;">
         <button class="lang-button">en</button>
     </a>
 </header>
@@ -31,9 +31,7 @@
 <p class="top-movies-title">Top Movies</p>
 <div class="top-movies-container">
     <?php
-    // Function to fetch top movies from TMDB API
     function fetchTopMovies() {
-        // Replace with your TMDB API key
         $apiKey = 'YOUR_TMDB_API_KEY';
         $url = "https://api.themoviedb.org/3/movie/popular?api_key={$apiKey}&language=en-US&page=1";
 
@@ -45,7 +43,6 @@
 
     $topMovies = fetchTopMovies();
 
-    // Display top movies
     foreach ($topMovies as $movie) {
         echo '<div class="top-movie">';
         echo '<h2>' . htmlspecialchars($movie['title']) . '</h2>';
@@ -59,9 +56,7 @@
 <p class="top-tvshows-title">Top TV Shows</p>
 <div class="top-tvshows-container">
     <?php
-    // Function to fetch top TV shows from TMDB API
     function fetchTopTVShows() {
-        // Replace with your TMDB API key
         $apiKey = '30525dbccc50717fd5dafc1219c94c9c';
         $url = "https://api.themoviedb.org/3/tv/popular?api_key={$apiKey}&language=en-US&page=1";
 
@@ -73,7 +68,6 @@
 
     $topTVShows = fetchTopTVShows();
 
-    // Display top TV shows
     foreach ($topTVShows as $tvShow) {
         echo '<div class="top-tvshow">';
         echo '<h2>' . htmlspecialchars($tvShow['name']) . '</h2>';

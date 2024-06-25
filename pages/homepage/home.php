@@ -10,7 +10,7 @@
 
 <header>
     <h1>MoX</h1>
-    <a href="../signuppageUser/signup.php">
+    <a href="../auth/signup.php">
         <button class="signup-button">Sign Up</button>
     </a>
     <a href="../homePageRo/homeRo.php" style="text-decoration: none;">

@@ -167,15 +167,14 @@ header h1 {
 
 
 
-/* Responsive design - Desktop to Tablet breakpoint */
 @media screen and (max-width: 1024px) {
     header {
-        padding: 5px; /* Adjust header padding for smaller screens */
+        padding: 5px;
     }
     
     .signup-button {
-        padding: 10px 15px; /* Adjust padding for smaller screens */
-        font-size: 18px; /* Adjust font size for smaller screens */
+        padding: 10px 15px;
+        font-size: 18px;
     }
 
     .lang-button {
@@ -183,7 +182,7 @@ header h1 {
     }
 
     .p0, .p1, .p2, .p3 {
-        font-size: 14px; /* Adjust font size for smaller screens */
+        font-size: 14px;
     }
 
     .movie-containerL {
@@ -191,7 +190,6 @@ header h1 {
     }
 }
 
-/* Responsive design - Tablet to Phone breakpoint */
 @media screen and (max-width: 768px) {
     header {
         padding: 5px; 
@@ -207,7 +205,7 @@ header h1 {
     }
 
     .p0, .p1, .p2, .p3 {
-        font-size: 12px; /* Adjust font size for smaller screens */
+        font-size: 12px;
     }
 
     .alphabet-selector {

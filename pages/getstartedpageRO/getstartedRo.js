@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     displayContent('containerU', 'movie/upcoming');
 
     const searchForm = document.getElementById('searchForm');
-    searchForm.addEventListener('submit', function (event) {
+    searchForm.addEventListener('submit', function(event) {
         event.preventDefault();
 
         const searchInput = document.getElementById('searchInput');

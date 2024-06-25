@@ -1,4 +1,3 @@
-// movies.js
 document.addEventListener('DOMContentLoaded', function() {
   const letterLinks = document.querySelectorAll('.letter-link');
 
@@ -36,7 +35,7 @@ function displayMovies(movies) {
     return;
   }
 
-  container.innerHTML = ''; // Clear previous movies
+  container.innerHTML = '';
   movies.forEach(movie => {
     const movieCard = document.createElement('div');
     movieCard.className = 'movie-card';

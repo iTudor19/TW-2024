@@ -3,12 +3,9 @@ session_start();
 include ("connection.php");
 include ("functions.php");
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    //something was posted 
     $email = $_POST['Email'];
     $password = $_POST['Password'];
-    //$confirmpassword = $_POST['Confirm Password'];
     if (!empty($email) && !empty($password)) {
-        //save to database 
         $query = "select * from users where email = '$email' limit 1";
         $result = mysqli_query($con, $query);
 
@@ -60,8 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <input type="email" class="input-field" name="Email"><br></br>
             <input type="password" class="input-field" name="Password"><br></br>
             <input id="button" type="submit" value="Sign Ip"><br></br>
-            <!--<button class="signin-button">Sign In</button>
-            <div class="signin-card"></div>-->
         </form>
     </div>
 

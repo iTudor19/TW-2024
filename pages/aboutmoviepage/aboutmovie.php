@@ -11,7 +11,7 @@
         <a href="../homepage/home.php" style="text-decoration: none;">
             <h1>MoX</h1>
         </a>
-        <a href="../signuppageUser/signup.php">
+        <a href="../auth/signup.php">
             <button class="signup-button">Sign Up</button>
         </a>
         <p class="p0">GENRE</p>
@@ -32,7 +32,6 @@
                 pretium a mauris eu, imperdiet placerat est. Mauris non porttitor dui. Quisque nunc nunc, porta in
                 ligula vitae, placerat aliquet odio.</p>
 
-            <!-- New text elements -->
             <div class="additional-info">
                 <div class="left-info">
                     <p class="p6"><b>Released</b>: <span id="release-date">Loading...</span></p>

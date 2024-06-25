@@ -9,10 +9,10 @@
 <body>
 
 <header>
-    <a href="../homepage/home.html" style="text-decoration: none;">
+    <a href="../homepage/home.php" style="text-decoration: none;">
         <h1>MoX</h1>
     </a>
-    <a href="../signuppageUser/signup.html">
+    <a href="../auth/signup.php">
         <button class="signup-button">Sign Up</button>
     </a>
     <p class="p0">GENRE</p>
@@ -21,7 +21,7 @@
     </a>
     <p class="p2">TV SHOWS</p>
     <p class="p3">TOP TMDB</p>
-    <a href="../getstartedpageRO/getstartedRo.html" style="text-decoration: none;">
+    <a href="../getstartedpageRO/getstartedRo.php" style="text-decoration: none;">
         <button class="lang-button">en</button>
     </a>
 </header>

@@ -1,5 +1,4 @@
 
-/* Common styles */
 body {
     margin: 0;
     padding: 0;
@@ -9,14 +8,13 @@ body {
 }
 
 
-/* Header styles */
 header {
     background-color: #222831; 
     position: relative;
     padding: 10px;
     display: flex;
-    justify-content: space-between; /* Align items horizontally */
-    align-items: center; /* Align items vertically */
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
@@ -25,7 +23,6 @@ header h1 {
     color: #76ABAE;
 }
 
-/* Language button styles */
 .lang-button {
     margin: 0;
     background-color: #222831;
@@ -36,12 +33,11 @@ header h1 {
     cursor: pointer;
     outline: none;
     position: absolute;
-    top: 50%; /* Adjust top position for responsiveness */
-    right: 1%; /* Adjust right position for responsiveness */
-    transform: translate(0%, -50%); /* Center vertically */
+    top: 50%;
+    right: 1%;
+    transform: translate(0%, -50%);
 }
 
-/* Background container styles */
 .background-container {
     position: absolute;
     top: 1%;
@@ -56,7 +52,6 @@ header h1 {
     box-sizing: border-box;
 }
 
-/* Signup card styles */
 .signin-card {
     position: absolute;
     top: 50%;
@@ -135,7 +130,6 @@ header h1 {
 }
 
 
-/* Responsive design - Desktop to Tablet breakpoint */
 @media screen and (max-width: 1024px) {
     header {
         padding: 5px; 
@@ -147,7 +141,6 @@ header h1 {
 
 }
 
-/* Responsive design - Tablet to Phone breakpoint */
 @media screen and (max-width: 768px) {
     header {
         padding: 5px; 

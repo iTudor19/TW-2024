@@ -39,7 +39,7 @@ async function updateActorDetails() {
 
     movies.forEach(movie => {
         const movieLink = document.createElement('a');
-        movieLink.href = `../aboutmoviepage/aboutmovie.php?movieId=${movie.id}`;
+        movieLink.href = `../aboutmoviepageRo/aboutmovieRo.php?movieId=${movie.id}`;
         movieLink.textContent = movie.title;
         movieLink.style.color = 'inherit';
         movieLink.style.textDecoration = 'none';
